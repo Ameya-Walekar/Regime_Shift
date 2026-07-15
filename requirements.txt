@@ -1,0 +1,14 @@
+Required Libraries: 
+
+numpy
+pandas
+matplotlib
+yfinance
+hmmlearn
+cvxpy
+scipy
+fredapi
+python-dotenv
+scikit-learn
+
+Command for installing in terminal: "pip install /library_name/ " or "pip3 install /library_name/  "

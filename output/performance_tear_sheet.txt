@@ -1,0 +1,124 @@
+
+────────────────────────────────────────────────────────────
+             📊  PERFORMANCE TEAR SHEET
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+1. Predictions by HMM Model 
+────────────────────────────────────────────────────────────
+
+=======================================================
+PER-FOLD (test dates only)
+=======================================================
+
+Fold 1  (n=18, test dates only)
+      Bull  Bear
+Bull     0     7
+Bear     0    11
+  Accuracy: 61.1%   Kappa: 0.000
+
+Fold 2  (n=17, test dates only)
+      Bull  Bear
+Bull     7     3
+Bear     3     4
+  Accuracy: 64.7%   Kappa: 0.271
+
+Fold 3  (n=16, test dates only)
+      Bull  Bear
+Bull     6     2
+Bear     5     3
+  Accuracy: 56.2%   Kappa: 0.125
+
+Fold 4  (n=17, test dates only)
+      Bull  Bear
+Bull     9     0
+Bear     6     2
+  Accuracy: 64.7%   Kappa: 0.261
+
+Fold 5  (n=10, test dates only)
+      Bull  Bear
+Bull     2     3
+Bear     1     4
+  Accuracy: 60.0%   Kappa: 0.200
+
+=======================================================
+COMBINED (all folds, test dates only, n=78)
+=======================================================
+      Bull  Bear
+Bull    24    15
+Bear    15    24
+
+Per-state prediction accuracy (recall):
+  Bull    : 61.5%  (24/39)
+  Bear    : 61.5%  (24/39)
+
+Overall accuracy: 61.5%
+Cohen's Kappa: 0.231  (<0.2 slight | 0.2-0.4 fair | 0.4-0.6 moderate | 0.6-0.8 substantial | >0.8 strong)
+
+────────────────────────────────────────────────────────────
+2. PER-FOLD TEAR SHEETS
+────────────────────────────────────────────────────────────
+
+  Fold 1  |  TRAIN: 2010-01-01 → 2017-01-01   TEST: 2017-01-01 → 2019-01-01
+              Ann. Return (%)  Ann. Vol (%)     Sharpe    Sortino  Max Drawdown (%)     Calmar  Total Return (%)
+Regime-Shift             5.55          7.93       0.70       1.01            -10.17       0.55             10.55
+60/40                    7.01          9.30       0.75       0.92            -12.04       0.58             13.44
+EqWt                     4.11          6.95       0.59       0.77             -9.56       0.43              7.69
+
+  Fold 2  |  TRAIN: 2010-01-01 → 2019-01-01   TEST: 2019-01-01 → 2021-01-01
+              Ann. Return (%)  Ann. Vol (%)     Sharpe    Sortino  Max Drawdown (%)     Calmar  Total Return (%)
+Regime-Shift            21.62         18.84       1.15       1.21            -24.94       0.87             46.46
+60/40                   22.98         16.03       1.43       1.52            -20.55       1.12             51.78
+EqWt                    14.85         13.57       1.09       1.07            -20.18       0.74             30.71
+
+  Fold 3  |  TRAIN: 2010-01-01 → 2021-01-01   TEST: 2021-01-01 → 2023-01-01
+              Ann. Return (%)  Ann. Vol (%)     Sharpe    Sortino  Max Drawdown (%)     Calmar  Total Return (%)
+Regime-Shift            -0.31         16.94      -0.02      -0.03            -24.40      -0.01             -2.88
+60/40                   -1.70         15.29      -0.11      -0.16            -26.70      -0.06             -4.68
+EqWt                    -4.59         11.69      -0.39      -0.58            -24.55      -0.19             -8.45
+
+  Fold 4  |  TRAIN: 2010-01-01 → 2023-01-01   TEST: 2023-01-01 → 2025-01-01
+              Ann. Return (%)  Ann. Vol (%)     Sharpe    Sortino  Max Drawdown (%)     Calmar  Total Return (%)
+Regime-Shift            22.91         11.72       1.96       2.81             -8.49       2.70             53.09
+60/40                   18.45         10.82       1.71       2.52             -9.11       2.02             40.82
+EqWt                     9.52          8.75       1.09       1.60             -8.86       1.07             19.13
+
+  Fold 5  |  TRAIN: 2010-01-01 → 2025-01-01   TEST: 2025-01-01 → 2026-05-31
+              Ann. Return (%)  Ann. Vol (%)     Sharpe    Sortino  Max Drawdown (%)     Calmar  Total Return (%)
+Regime-Shift            36.09         19.06       1.89       2.13            -15.22       2.37             53.03
+60/40                   20.82         14.61       1.42       1.89            -12.82       1.62             27.80
+EqWt                    16.07         10.47       1.53       2.03             -8.99       1.79             21.25
+
+Saved: output/tearsheet_all_folds.csv
+
+────────────────────────────────────────────────────────────
+3. TEAR SHEET SUMMARY
+────────────────────────────────────────────────────────────
+              Ann. Return (%)  Ann. Vol (%)     Sharpe    Sortino  Max Drawdown (%)     Calmar  Total Return (%)
+Regime-Shift            15.32         15.22       1.01       1.22            -24.94       0.61            257.37
+60/40                   12.68         13.37       0.95       1.19            -26.70       0.47            188.87
+EqWt                     7.29         10.53       0.69       0.84            -24.55       0.30             83.22
+
+Saved: output/tearsheet_summary.csv
+
+────────────────────────────────────────────────────────────
+4. TURNOVER & TRANSACTION COST
+────────────────────────────────────────────────────────────
+  Avg annual turnover      :    190.2%
+  Total cost drag (5bps) :     0.88% cumulative (already deducted in port_ret via the per-rebalance drag term)
+
+────────────────────────────────────────────────────────────
+5. REGIME TRANSITION STATISTICS
+────────────────────────────────────────────────────────────
+  Number of regime switches : 24
+  Avg run length            : 4.4 rebalances
+    Bear  : 4.4 rebalances avg
+    Bull  : 4.5 rebalances avg
+
+────────────────────────────────────────────────────────────
+6. VERDICT
+────────────────────────────────────────────────────────────
+Regime Shift beats 60/40 static portfolio in almost all metrics in the final tear sheet summary
+Overall HMM prediction kappa is 0.231 and overall accuracy is 61.5% which is reasonably good 
+The Regime-Shift survives the transaction friction as the 5 bps penalty per rebalance causes total cost drag of 0.88% cumulative which is already deducted in results
+Walk forward validation is strictly enforced as while applying the multi fold expanding window strategy the hmm is strictly fitted on past data
