@@ -1,9 +1,11 @@
-#Regime Shift
+# Regime Shift
 
-##Introduction:
+## Introduction:
+
 This is Regime-Shift, a dynamic asset allocation engine which uses Hidden Markov Model(HMM) to detect market regime and accordingly rebalance the portfolio.
 
-##Architecture Decisions:
+## Architecture Decisions:
+
 The main components of the engine:
 
 1. Data Ingestion
@@ -54,7 +56,7 @@ The main components of the engine:
    - Text Files produced - Readable files for walk forward validation and performance metrics.
    - All results are stored in a folder "output" which is created in the same folder as the code.
 
-##Reproducibility Guide:
+## Reproducibility Guide:
 
 1. Download the 'regime_shift_final.ipynb file'
 2. Install python(3.11 or above) and all the python libraries required to run the code given in requirements.txt.
@@ -66,7 +68,8 @@ The main components of the engine:
    - 3 csv files
    - 2 text files
 
-##Testing Instructions:
+## Testing Instructions:
+
 A test is considered successful if all of the following checks pass:
 
 - All sources (yahoo finance and FRED) are loaded successfully without any failure messages, (such as FRED unavailable or Could not fetch price data).
