@@ -61,7 +61,7 @@ The main components of the engine:
 1. Download the 'regime_shift.ipynb file'
 2. Install python(3.11 or above) and all the python libraries required to run the code given in 'requirements.txt' . (do install extra dependency – 'Microsoft C++ Build Tools' on Windows / 'Xcode Command Line Tools' on macOS / 'build-essential' on Linux, which hmmlearn library require)
 3. Generate a FRED API key from their official website (you have to sign in or create a new account).
-4. Create a '.env' file in the same folder as the code and write one line in it:
+4. Create '.env' file in the same folder as the code and write one line in it:
    FRED_API_KEY = "your_newly_created_FRED_API_key"
 5. Running the code (Open in Jupyter and run all cells of the .ipynb file) gives all the results in 'output' folder which includes:
    - 7 charts
